@@ -6,11 +6,30 @@
     
 }
 body{
-    background: linear-gradient(to right, rgb(16, 134, 155), rgb(215, 102, 204) );
+    background: linear-gradient(to left, rgb(202, 205, 206), rgb(215, 102, 204) );
 }
 h1{
     text-align: center;
 }
 p{
     text-align: center;
+}
+#registration_form {
+    background-color: whitesmoke;
+    width: 120vh;
+    margin: auto;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+#loginButton{
+    /* padding: 2px; */
+    height: 25px;
+    display: inline;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 242);
+    border: 1px;
+    
 }
