@@ -6,28 +6,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="emailLogin.css">
+    <script>
+
+      // var emailLogin = document.getElementById('exampleInputEmail1').value
+      // var regex4email = /^[\w]{1,25}+[@]+[a-z]{1,8}+(...)+[\w]$/;
+      // function formSubmit() {
+      //   if(regex4email.test(emailLogin)){
+      //   showMsg.innerHtml = "correct";
+
+      //   }
+      //   else{
+      //     if(regex4email.test(emailLogin)){
+      //   showMsg.innerHtml = "not correct";
+      //   }
+      // }
+
+      // function setTable (){
+      //   var regexForEmail = /^[\w]{1,25}+[@]+[a-z]{1,8}+(...)+[\w]$/;
+      //   if (regexForEmail.test(em.value)== false){
+      //     em.value = 'character must include @';
+      //     em.className = "form-control is-invalid";
+
+      //   }
+      // }
+
+      // var login = JSON.parse(localStorage.getItem('myList'));
+      // function LogIn (){
+      //   for (let i = 0; i <login.length; i++) {
+      //     if (mail.value == login[i].email && pas.value == login[i].password){
+      //       window.location = 'welcomePage.html';
+      //     }
+      //     else if (mail.value != login[i].email && pas.value != login[i].password){
+      //       alert('Wrong E-mail');
+      //     }
+      //     else if (mail.value == login[i].email && pas.value != login[i].password){
+      //       alert('Wrong Password');
+      //     }
+      //     else{
+      //       alert('You have not been registered, Please Sign Up!')
+      //     }
+          
+      //   }
+      // }
+
+      function signUp(){
+        window.location = "registration.html";
+        
+      }
+
+    </script>
 </head>
 <body>
-                <div id="emailLoginLandingPage">  
+          <form action="" onsubmit="return formSubmit()"> 
+            <div id="emailLoginLandingPage">  
+            <div id="loginHead">
+            <h1>Login to your account</h1>
+            <small id="emailHelp" class="form-text text-muted">Don't have an account? <a onclick="signUp()">Sign Up Free!</a></small>
+            </div> 
 
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                      
+            <div class="form-group" id="form_group label">
+              <label for="exampleInputEmail1"> Email address</label> <br>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <span id="showMsg"></span> <br>
+                            
+              <label for="exampleInputPassword1" id="exampleInputPassword">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  
+                <div id="KeepmeLoggedIn">
+                 <input type="checkbox" class="form-check-input" id="exampleCheck1"> 
+                    <label class="form-check-label" for="exampleCheck1">Keep me logged in</label> <span id="ForgerPswd"> <a href="">Forgotten you password?</a> </span>
                     </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                     </div>
-                    <div class="form-check">
-                      <input type="checkbox" class="form-check-input" id="exampleCheck1"> 
-                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                    <button type="submit" class="btn btn-primary" id="registerHereButton"> <a href="registration.html">Register here</a></button>
+
+                    <div type="submit" class="btn btn-primary" id="LoginButton"> <a href="#" onclick="LogIn()">Log in</a></div>
+                    
 
                   
-                </div>
+            </div>
+          </form>
 
 </body>
 </html>

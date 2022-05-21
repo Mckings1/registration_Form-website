@@ -7,13 +7,13 @@
     
 }
 body{
-    background: linear-gradient(to left, rgb(202, 205, 206), rgb(215, 102, 204) );
+    background: linear-gradient(to left, rgb(245, 219, 187), rgb(215, 102, 204) );
 }
 
 #emailLoginLandingPage{
     background-color: whitesmoke;
     padding: 20px;
-    height: 40vh;
+    height: 41vh;
     width: 60vh;
     margin: auto;
     border-radius: 10px;
@@ -21,4 +21,52 @@ body{
 }
 #registerHereButton{
     text-decoration: none;
+}
+
+#exampleInputEmail1 {
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+#exampleInputPassword{
+    margin-top: 50px;
+}
+#exampleInputPassword1{
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#form_group label{
+    margin-top: 10px;
+    
+}
+#loginHead{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#ForgerPswd{
+    float: right;
+    
+}
+#KeepmeLoggedIn{
+    margin-bottom: 10px;
+}
+#LoginButton{
+    margin-top: 20px;
+    background-color: rgb(228, 228, 172);
+    text-align: center;
+    padding: 5px;
+    align-items: center;
+    width: 40vh;
+    cursor: pointer;
+    border-radius: 10px;
+    margin: auto;
+}
+
+#emailHelp a{
+    cursor: pointer;
+    color: blue;
 }
