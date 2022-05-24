@@ -7,22 +7,40 @@
     <title>Document</title>
     <link rel="stylesheet" href="registration.css">
     <!-- Bootstrap Css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap-reboot.css">
 
     <script>
-        if (JSON.parse(localStorage.getItem('myList')) != null){
-            store = JSON.parse(localStorage.getItem('myList'));
+         var getItem = JSON.parse(localStorage.getItem("myLists"))
+        if (getItem != null){
+            registerList = getItem;
+
         }
         else{
-            store = [];
+            registerList = [];
         }
-        function emailLogin(){
-            window.location = "emailLogin.html";
-            
-        }
+        // var registerList = [];
+       function signUp (){
+           if(fn.value != "" && ln.value !="" && em.value !="" && 
+           mb.value !="" && sx.value != "" && pswd.value != "")
+           {
+            registerList.push({"firstName":fn.value, "lastName":ln.value, 
+            "email":em.value, "mobileNumber":mb.value, "sex":sx.value, "password":pswd.value})
+           }
+           setLocalStorage();
+           alert("SIGN UP SUCCESFUL");
+        //    window.location = "applicantListsPage.html"
 
-
+       }
+       function setLocalStorage(){
+                a = JSON.stringify(registerList);
+               localStorage.setItem("myLists", a);
+       }
         
+
+       function emailLogin (){
+           window.location = "emailLogin.html";
+       }
     </script>
 </head>
 <body>
@@ -40,21 +58,24 @@
     <div id="registration_form">
         <form action="">
             <b><label for="">Firstname</label></b>
-            <input type="text" name="" id="typeHere" placeholder="enter your firstname">
+            <input type="text" name="" class="typeHere" id="fn" placeholder="enter your firstname">
             <b><label for="">Lastname</label></b>
-            <input type="text" name="" id="typeHere" placeholder="enter your lastname">
+            <input type="text" name="" class="typeHere" id="ln" placeholder="enter your lastname">
             <b><label for="">Email</label></b>
-            <input type="email" name="" id="typeHere" placeholder="enter your email">
+            <input type="email" name="" class="typeHere" id="em" placeholder="enter your email">
             <b><label for="">Mobile Number</label></b>
-            <input type="number" name="" id="typeHere">
+            <input type="number" name="" class="typeHere" id="mb">
             <b><label for="">Sex</label></b>
-            <input type="text" name="" id="typeHere">
-            <b> <label for="">Address</label> </b>
-            <textarea type="text" name="" id="typeHereAddress"></textarea>
+            <input type="text" name="" class="typeHere" id="sx">
+            <b><label for="">Password</label></b>
+            <input type="password" name="" class="typeHere" id="pswd"> <br>
+            <!-- <b> <label for="">Address</label> </b> -->
+            <!-- <textarea type="text" name="" class="typeHereAddress" id="ad"></textarea> -->
+            
 
             <!-- <textarea id="input_7" class="form-textarea" name="q7_address" cols="55" rows="6" style="width: 300px; height: 25px;"></textarea><br> --> 
             <!-- <p>Click here to <button class="bg-danger text-">SIGN UP</button></p> -->
-            <p>Click here to <a href="">SIGN UP</a></p>
+           <br> <p>Click here to <button class="rounded" onclick="signUp()"><a href="applicantListsPage.html">SIGN UP</a> </button></p>
             <small id="emailHelp" class="form-text text-muted">Already have an account? <a onclick="emailLogin()"> LOGIN HERE</a></button></small> 
            
             
@@ -66,6 +87,8 @@
 
 
 
-
+    <script src="bootstrap-5.0.2-dist/js/jquery.js"></script>
+  <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap-5.0.2-dist/js/bootstrap.js"></script>
 </body>
 </html>

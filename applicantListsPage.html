@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Lists Forms</title>
+    <script>
+       var setLists = JSON.parse(localStorage.getItem("myLists"));
+       if(setLists !=null){
+           registerLists = setLists;
+           console.log(registerLists)
+           
+       }
+       else{
+           registerLists = [];
+       }
+       console.log(setLists);
+       function aLists(){
+            display = "";
+            for (let i = 0; i< registerLists.length; i++) {
+            
+            w = 1;
+            // display += "<tr><td>" + i+1 + "</td><td>" + registerLists[i].firstName + "</td><td>" + registerLists[i].lastName + "</td><td>" + registerLists[i].phoneNumber + "</td><td>" + registerLists[i].sex  + "</td><td>"+ registerLists[i].address + "</td><td>" +"</td><img src ='delete.png' width =20 height= 20/></td><td onclick='editer("+i+")'><img src ='edit.png' width =20 height= 20 /></td> </tr>";        
+            
+            display += "<tr><td>" + w + "</td><td>" + registerLists[i].firstName + "</td><td>" + registerLists[i].lastName + "</td><td>" + registerLists[i].email + "</td><td>" + registerLists[i].mobileNumber + "</td><td>" + registerLists[i].sex + "</td><td>" + registerLists[i].address +"</td><td onclick='deleter("+i+")'><img src ='delete.png' width =20 height= 20/></td><td onclick='editer("+i+")'><img src ='edit.png' width =20 height= 20 /></td> </tr>";    
+                       w++;
+        }
+       tshow.innnerHTML= display;
+       }
+        
+     </script>
+</head>
+<body style="background-image: url(applicantbgImage.jpg);" >
+    <table align="center" border="1" cellpadding="5px">
+        <thead>
+            <tr>
+               <tr align="center"> <td colspan="9">Applicants Lists</td></tr>
+                <th>S/N</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile number</th>
+                <th>Sex</th>
+                <th>Address</th>
+                <th title="Delete">D</th>
+                <th>Edit</th>
+                
+            </tr>
+        </thead>
+        <tbody id="tshow">
+
+        </tbody>
+    </table>
+</body >
+    
+</html>

@@ -6,8 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="emailLogin.css">
+    
     <script>
-
+       var itemGet = JSON.parse(localStorage.getItem("myLists"))
+       email = exampleInputEmail1.value;
+       pwd = exampleInputPassword.value;
+       function logIn(){
+          for (let i = 0; i < itemGet.length; i++) {
+            if(email==itemGet[i].email&& pwd==itemGet[i].password){
+              window.header.href = "welcomePage.html"
+            }else{
+              alert("valuse is not valid")
+            }
+            
+          }
+          // if(applicants){
+          //   var invalidpswd = (applicants.password == exampleInputPassword.value)
+          //   if(invalidpswd){
+          //     window.location ='welcomePage.html';
+          //   }
+          //   else{
+          //     exampleInputPassword.value = "incorret password";
+          //   }
+              
+          // }
+          // else{
+          //   exampleInputEmail1.value = "email does not exist!";
+          // }
+       }
+ 
+   
       // var emailLogin = document.getElementById('exampleInputEmail1').value
       // var regex4email = /^[\w]{1,25}+[@]+[a-z]{1,8}+(...)+[\w]$/;
       // function formSubmit() {
@@ -27,27 +55,7 @@
       //     em.value = 'character must include @';
       //     em.className = "form-control is-invalid";
 
-      //   }
-      // }
-
-      // var login = JSON.parse(localStorage.getItem('myList'));
-      // function LogIn (){
-      //   for (let i = 0; i <login.length; i++) {
-      //     if (mail.value == login[i].email && pas.value == login[i].password){
-      //       window.location = 'welcomePage.html';
-      //     }
-      //     else if (mail.value != login[i].email && pas.value != login[i].password){
-      //       alert('Wrong E-mail');
-      //     }
-      //     else if (mail.value == login[i].email && pas.value != login[i].password){
-      //       alert('Wrong Password');
-      //     }
-      //     else{
-      //       alert('You have not been registered, Please Sign Up!')
-      //     }
-          
-      //   }
-      // }
+    
 
       function signUp(){
         window.location = "registration.html";
@@ -57,7 +65,7 @@
     </script>
 </head>
 <body>
-          <form action="" onsubmit="return formSubmit()"> 
+          
             <div id="emailLoginLandingPage">  
             <div id="loginHead">
             <h1>Login to your account</h1>
@@ -78,12 +86,12 @@
                     </div>
                     </div>
 
-                    <div type="submit" class="btn btn-primary" id="LoginButton"> <a href="#" onclick="LogIn()">Log in</a></div>
+                    <div type="button" class="btn btn-primary" id="LoginButton" onclick="logIn()"> <button>Log in</button></div>
                     
 
                   
             </div>
-          </form>
+         
 
 </body>
 </html>

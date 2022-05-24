@@ -23,6 +23,7 @@ p{
     align-items: center;
     padding:20px;
     border-radius: 10px;
+    margin-bottom: 20px;
 
 }
 #registration_form label{
@@ -38,12 +39,12 @@ p{
     border: 1px;
     
 }
-#typeHere{
+.typeHere{
     width: 100%;
     height: 100%;
     padding: 2px;
 }
-#typeHereAddress{
+.typeHereAddress{
     margin-bottom: 10px;
     width: 100%;
 }
